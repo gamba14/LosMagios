@@ -1,0 +1,10 @@
+<%= simple_form_for([persona,tramite]) do |f| %>
+
+<%= f.input :tipo, collection: ["Recoleccion de basura","Recoleccion de ramas","Arreglo de luminaria","Arreglo de calle","Otros"] %>
+<%= f.input :comentario %>
+<%= f.input :estado, collection: ["Pendiente de ejecucion", "Ejectuado", "Observado", "Rechazado"] %>
+<%= f.button :submit, class: "btn btn-primary" %>
+
+
+
+<% end %>

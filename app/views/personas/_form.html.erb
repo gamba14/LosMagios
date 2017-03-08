@@ -1,0 +1,11 @@
+<%= simple_form_for(@persona) do |f| %>
+	<%= f.input :dni %>
+	<%= f.input :nombre %>
+	<%= f.input :apellido %>
+	<%= f.input :direccion %>
+	<%= f.input :localidad %>
+	<%= f.input :codigoPostal %>
+	<%= f.input :telefono %>
+	<%= f.input :correo %>
+	<%= f.button :submit, "Cargar", class: "btn btn-success	" %>
+<% end %>
