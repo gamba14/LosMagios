@@ -2,7 +2,7 @@ class TramitesController < ApplicationController
 
 	
 	before_action :set_persona
-	before_action :set_tramite, only: [:show, :edit]
+	#before_action :set_tramite, only: [:show, :edit]
 
 	def new
 		@tramite = @persona.tramites.build
@@ -27,6 +27,15 @@ class TramitesController < ApplicationController
 
 	def show
 		@estado = @tramite.estados.build(estado_id: @tramite.estado_id)
+	end
+
+	def destroy
+
+		tramite = Tramite.find(params[:id])
+		persona_id = tramite.persona_id
+		tramite.destroy
+		redirect_to "/personas/#{persona_id}"
+
 	end
 
 	private

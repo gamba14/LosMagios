@@ -1,6 +1,6 @@
 <h1><%= @persona.nombre + @persona.apellido %></h1>
 
-<%= link_to "nuevo tramite", new_persona_tramite_path(@persona) %>
+<%= link_to "nuevo tramite", new_persona_tramite_path(@persona), class: "new" %>
 
 
 <table class="table table-hover">
@@ -19,6 +19,8 @@
 		<td><%= t.comentario %></td>
 		<td><%= t.id %></td>
 		<td><%= t.estado %></td>
+		<td><%= link_to "Borrar", "/personas/#{t.persona_id}/tramites/#{t.id}" ,method: :delete,
+					data: {confirm: "¿Seguro desea borrar?"} %></td>
 		<% end %>
 	</tr>	
 </tbody>
